@@ -7,7 +7,7 @@ typedef struct LIST
 	struct LIST *next;
  } list;
 
-//Á´±íµÄ´´½¨
+//é“¾è¡¨çš„åˆ›å»º
 list * creat(list * head, int n)
 {
 	int i=0;
@@ -29,19 +29,20 @@ list * creat(list * head, int n)
 
     return head;
 }
-//Á´±íÊä³ö 
+//é“¾è¡¨è¾“å‡º 
 int output(list *head)
 {
 	list *point;
 	point = head;
 	while(point != NULL)
 	{
-		printf("%d,%d\n",point,point->n);
+		printf("%p,%d\n",point,point->n);
 		point=point->next;
 	}
+    
 	return 0;
 }
-//µİÔöÁ´±íºÏ²¢ ·ÅÔÚhead1 (¶ªÊ§µÚÒ»¸öÖµ 
+//é€’å¢é“¾è¡¨åˆå¹¶ æ”¾åœ¨head1 (ä¸¢å¤±ç¬¬ä¸€ä¸ªå€¼ 
 list *hebing(list* head1,list* head2) 
 {
 	list *head3,*p1,*p2,*p3,*q;
@@ -75,7 +76,7 @@ list *hebing(list* head1,list* head2)
 	return head3;
 }
 
-//Çó½»¼¯ ·ÅÔÚhead1 
+//æ±‚äº¤é›† æ”¾åœ¨head1 
 list *inboth(list *head1,list *head2) 
 {
 	list *head3,*p1,*p2,*p3;
