@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define MAX 100
 typedef struct STACK{
 	char ch[MAX];
 	int top;
 	int bottom;
 }stack;
-//ÅĞ¶Ï»ØÎÄ 
+//åˆ¤æ–­å›æ–‡ 
 int push(stack *head,char j)
 {
 	if(head->top != MAX)
@@ -15,7 +16,7 @@ int push(stack *head,char j)
 //		printf("%c\n",j);
 	}
 	
-	else printf("Õ»ÒÑÂú");
+	else printf("æ ˆå·²æ»¡");
 //	printf("%d",head->top);
 	return 0;
 }
@@ -81,8 +82,8 @@ int main()
 	m=judge(head,buff);
 	if(m==0)
 	{
-		printf("»ØÎÄ");
+		printf("å›æ–‡");
 	}
-	else printf("²»ÊÇ»ØÎÄ");
+	else printf("ä¸æ˜¯å›æ–‡");
 	return 0;
 }
