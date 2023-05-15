@@ -40,7 +40,7 @@ int output(list *head)
 	}
 	return 0;
 }
-//递增链表合并 放在head1 (丢失第一个值 
+//递增链表合并 放在head1 (丢失较大栈的第一个值 
 list *hebing(list* head1,list* head2) 
 {
 	list *head3,*p1,*p2,*p3,*q;
