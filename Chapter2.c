@@ -16,6 +16,7 @@ list * creat(list * head, int n)
     scanf("%d",&x->n);
     x->next= NULL;
     head=x;
+    
 	for(;i<n-1;i++)
 	{
 		x1 = (list*)malloc(sizeof(list));
@@ -38,15 +39,34 @@ int output(list *head)
 		printf("%p,%d\n",point,point->n);
 		point=point->next;
 	}
+    
 	return 0;
 }
-//递增链表合并 放在head1 (丢失较大栈的第一个值 
+//递增链表合并 放在head1 (丢失第一个值 
 list *hebing(list* head1,list* head2) 
 {
 	list *head3,*p1,*p2,*p3,*q;
-	p1=head1->next; //为什么p1=head1不行 
-	p2=head2->next;
-	head3=head1->n<head2->n?head1:head2;
+	//p1=head1->next;
+	//p2=head2->next; 没有考虑第一个节点中数值较大的那个
+	p1=head1;
+	p2=head2;
+	if(head1->n < head2->n)
+	{
+		head3=head1;
+		p1=p1->next;
+	}
+	else if(head1->n > head2->n)
+	{
+		head3=head2;
+		p2=p2->next;
+	}
+	else
+	{
+		head3=head1;
+		p1=p1->next;
+		p2=p2->next;
+
+	}
 	p3=head3;
 	while(p1 && p2)
 	{
@@ -78,7 +98,7 @@ list *hebing(list* head1,list* head2)
 list *inboth(list *head1,list *head2) 
 {
 	list *head3,*p1,*p2,*p3;
-	p1=p3=head1; //为什么这个可以 
+	p1=p3=head1;
 	p2=head2;
 	head3=p3=NULL;
 	while(p1 && p2)
@@ -120,7 +140,7 @@ int main()
 	printf("list1 finish\n");
 	head2 = creat(head2,n);
 	printf("list2 finish\n");
-//	output(head1);
+	// output(head1);
 //	output(head2);
 
 	head3 = hebing(head1,head2);
