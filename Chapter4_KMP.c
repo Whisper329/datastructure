@@ -17,14 +17,14 @@ void get_next(char *S,int *next)
 		}
 	}
 }
-//Êä³öÇ°xºÍºóx¸öÏàÍ¬µÄ×Ö·û´®£¬Ã»ÓĞÊä³ö±íÊ¾Ã»ÓĞÆ¥Åä 
+//è¾“å‡ºå‰xå’Œåxä¸ªç›¸åŒçš„å­—ç¬¦ä¸²ï¼Œæ²¡æœ‰è¾“å‡ºè¡¨ç¤ºæ²¡æœ‰åŒ¹é…å­—ç¬¦
 int output(char *S,int *next)
 {
 	int i=0,j=0,m=0;
 	for(i=0;i<strlen(S);i++)
 	{
 		j=0;
-		printf("**");//Èç¹ûÊä³ö**µ«Ã»ÓĞ×Ö·ûÊä³ö£¬ËµÃ÷Ã»ÓĞÆ¥ÅäµÄ×Ö·û 
+		printf("**");//å¦‚æœè¾“å‡º**ä½†æ²¡æœ‰å­—ç¬¦è¾“å‡ºï¼Œè¯´æ˜æ²¡æœ‰åŒ¹é…çš„å­—ç¬¦ 
 		while(j<next[i])
 		{
 			printf("%c",S[j++]);
@@ -64,7 +64,7 @@ int match(char *S, char *P, int *next)
 		}
 		else
 		{
-			j=next[j]; //ÎªÊ²Ã´ÊÇj=next[j],²»ÊÇ 
+			j=next[j]; //ä¸ºä»€ä¹ˆæ˜¯j=next[j],ä¸æ˜¯ 
 		
 		}
 		printf("%d %d\n",i,j);
@@ -73,8 +73,8 @@ int match(char *S, char *P, int *next)
 }
 int main()
 {
-	char S[]="abcaabbabcabaacbacba";//Ö÷´®
-	char P[]="abcabaa"; //Ä£Ê½´® 
+	char S[]="abcaabbabcabaacbacba";//ä¸»ä¸²
+	char P[]="abcabaa"; //æ¨¡å¼ä¸² 
 	int next[500]={-1};
 	int m;
 //	printf("---%d\n",strlen(S));
@@ -84,11 +84,11 @@ int main()
 	m=match(S,P,next);
 	if(m)
 	{
-		printf("Æ¥Åä³É¹¦£¬ÔÚµÚ%d¸öÎ»ÖÃ£¨´Ó1¿ªÊ¼£©",m);
+		printf("åŒ¹é…æˆåŠŸï¼Œåœ¨ç¬¬%dä¸ªä½ç½®ï¼ˆä»1å¼€å§‹ï¼‰",m);
 	}
 	else
 	{
-		printf("Æ¥ÅäÊ§°Ü£¬Ö÷´®ÖĞÃ»ÓĞ¸ÃÄ£Ê½´®");
+		printf("åŒ¹é…å¤±è´¥ï¼Œä¸»ä¸²ä¸­æ²¡æœ‰è¯¥æ¨¡å¼ä¸²");
 	}
 	return 0;
 }
