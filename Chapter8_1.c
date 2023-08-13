@@ -6,7 +6,7 @@ struct employee
 	int age;
 	int sa;
 };
-int straight_insert_sort(int *num,int n)  //Ö±½Ó²åÈëÅÅĞò 
+int straight_insert_sort(int *num,int n)  //ç›´æ¥æ’å…¥æ’åº 
 {
 	int i;
 	int j;
@@ -26,7 +26,7 @@ int straight_insert_sort(int *num,int n)  //Ö±½Ó²åÈëÅÅĞò
 	return 0;
  } 
  
-int Binary_insert_sort(int *num, int n) //ÕÛ°ë²åÈëÅÅĞò ÔÚÒÑÅÅºÃĞòµÄÊı×éÖĞ²åÈë 
+int Binary_insert_sort(int *num, int n) //æŠ˜åŠæ’å…¥æ’åº åœ¨å·²æ’å¥½åºçš„æ•°ç»„ä¸­æ’å…¥ 
 {
 	int mid,high,low=1;
 	int i=high,j;
@@ -55,7 +55,7 @@ int Binary_insert_sort(int *num, int n) //ÕÛ°ë²åÈëÅÅĞò ÔÚÒÑÅÅºÃĞòµÄÊı×éÖĞ²åÈë
 	}
 		
 }
-int shell_sort(int *num,int n)   //Ï£¶ûÅÅĞò ²»»á 
+int shell_sort(int *num,int n)   //å¸Œå°”æ’åº ä¸ä¼š 
 {
 	int i,j,k;
 	int d=n/2;
@@ -86,7 +86,7 @@ int shell_sort(int *num,int n)   //Ï£¶ûÅÅĞò ²»»á
 	return 0;
 }
 
-int bubble_sort(int *num,int n)  //Ã°ÅİÅÅĞò 
+int bubble_sort(int *num,int n)  //å†’æ³¡æ’åº 
 {
 	int i,j,temp;
 	for(i=0;i<n-1;i++)
@@ -104,7 +104,7 @@ int bubble_sort(int *num,int n)  //Ã°ÅİÅÅĞò
 	return 0;
  } 
 
-int quick_sort(int *num,int low,int high)  //¿ìËÙÅÅĞò 
+int quick_sort(int *num,int low,int high)  //å¿«é€Ÿæ’åº 
 {
 	int i=low,j=high,temp,poi;
 	if(low<high)
@@ -130,12 +130,12 @@ int quick_sort(int *num,int low,int high)  //¿ìËÙÅÅĞò
 	return 0;
 }
 
-int heapadjust(int *num,int start,int end)  //µ÷Õû¶Ñ 
+int heapadjust(int *num,int start,int end)  //è°ƒæ•´å † 
 {
 	int i;
 	int temp;
 	temp=num[start];
-	for(i=2*start;i<=end;i=i*2)
+	for(i=2*start+1;i<=end;i=i*2+1)
 	{
 		if(i<end&&num[i]<num[i+1])
 		{
@@ -151,10 +151,10 @@ int heapadjust(int *num,int start,int end)  //µ÷Õû¶Ñ
 	num[start]=temp;
 	return 0;
 }
-int heap_sort(int *num,int n)  //¶ÑÅÅĞò 
+int heap_sort(int *num,int n)  //å †æ’åº 
 {
 	int i,temp;
-	for(i=n/2-1;i>=0;i--) //½¨³õ¶Ñ 
+	for(i=n/2-1;i>=0;i--) //å»ºåˆå † 
 	{
 		heapadjust(num,i,n-1);
 	}
@@ -171,8 +171,8 @@ int heap_sort(int *num,int n)  //¶ÑÅÅĞò
 
 int merge(int num[],int temp[],int low,int high)
 {
-	//  >>µÄÓÅÏÈ¼¶µÍÓÚ+£¬ËùÒÔ¼ÓÀ¨ºÅ 
-	int mid=low+((high-low)>>1);      //·ÀÖ¹ÕûÊıÒç³ö (low+high)/2;
+	//  >>çš„ä¼˜å…ˆçº§ä½äº+ï¼Œæ‰€ä»¥åŠ æ‹¬å· 
+	int mid=low+((high-low)>>1);      //é˜²æ­¢æ•´æ•°æº¢å‡º (low+high)/2;
 
 	int pos=low;
 	int p1=low,p2=mid+1;
